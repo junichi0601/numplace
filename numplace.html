@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="ナンプレ">
+<meta name="theme-color" content="#EFEDE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161A" media="(prefers-color-scheme: dark)">
+<title>ナンプレ</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<style>
+:root{
+--paper:#EFEDE6; --cell:#FAF9F5; --sumi:#1C1A17; --ai:#1F4370; --ai-soft:#DCE4F0;
+--shu:#B4372E; --koke:#4A6B3A; --line:#CFCBC0; --rule:#8A8578; --muted:#7A7568;
+--panel:#F7F5EF;
+}
+@media (prefers-color-scheme:dark){
+:root{
+--paper:#14161A; --cell:#1D2026; --sumi:#E8E4DA; --ai:#8CB2E0; --ai-soft:#26364A;
+--shu:#E0776B; --koke:#9CC084; --line:#2C3138; --rule:#4A525C; --muted:#8A8F98;
+--panel:#1A1D22;
+}
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;height:100%;overscroll-behavior:none}
+body{
+background:var(--paper);color:var(--sumi);
+font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;
+touch-action:manipulation;
+}
+#app{
+display:flex;flex-direction:column;justify-content:space-between;gap:12px;height:100svh;max-width:460px;margin:0 auto;
+padding:calc(env(safe-area-inset-top) + 8px) 14px calc(env(safe-area-inset-bottom) + 10px);
+}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.lvl{
+display:flex;align-items:baseline;gap:8px;background:none;border:0;padding:4px 0;color:inherit;font:inherit;
+}
+.lvl b{font-size:19px;font-weight:600;letter-spacing:.04em}
+.lvl span{font-size:11px;color:var(--muted);letter-spacing:.12em}
+.stats{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted)}
+.stats .t{font-variant-numeric:tabular-nums;font-size:15px;color:var(--sumi);letter-spacing:.02em}
+.stats .m{color:var(--shu)}
+.icobtn{
+width:34px;height:34px;border:1px solid var(--line);border-radius:9px;background:var(--cell);
+color:var(--sumi);display:flex;align-items:center;justify-content:center;padding:0
+}
+.icobtn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.board{position:relative;width:min(100%,calc(100svh - 270px));margin:0 auto;aspect-ratio:1;border:2px solid var(--rule);border-radius:4px;background:var(--line);
+display:grid;grid-template-columns:repeat(9,1fr);grid-template-rows:repeat(9,1fr);gap:1px;overflow:hidden}
+.c{background:var(--cell);display:flex;align-items:center;justify-content:center;position:relative;font-size:24px;line-height:1}
+.c.br{border-right:2px solid var(--rule);margin-right:-1px}
+.c.bb{border-bottom:2px solid var(--rule);margin-bottom:-1px}
+.c.given{font-family:"Hiragino Mincho ProN",Georgia,"Times New Roman",serif;font-weight:600;color:var(--sumi)}
+.c.mine{font-weight:400;color:var(--ai)}
+.c.wrong{color:var(--shu)}
+.c.peer{background:color-mix(in srgb,var(--ai-soft) 45%,var(--cell))}
+.c.same{background:var(--ai-soft)}
+.c.sel{background:var(--ai-soft);box-shadow:inset 0 0 0 2px var(--ai)}
+.c.hit{animation:pop .28s ease-out}
+@keyframes pop{0%{transform:scale(.72);opacity:.4}100%{transform:scale(1);opacity:1}}
+.memo{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);
+width:100%;height:100%;font-size:10px;line-height:1;color:var(--muted);font-weight:400}
+.memo i{display:flex;align-items:center;justify-content:center;font-style:normal}
+.paused{position:absolute;inset:0;background:var(--paper);display:flex;align-items:center;justify-content:center;
+flex-direction:column;gap:10px;font-size:14px;color:var(--muted);z-index:3}
+.bottom{padding-bottom:2px}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.tool{background:var(--cell);border:1px solid var(--line);border-radius:11px;padding:8px 0 6px;color:var(--sumi);
+display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;letter-spacing:.02em}
+.tool svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tool.on{background:var(--ai);border-color:var(--ai);color:var(--cell)}
+.tool.on .badge{background:var(--cell);color:var(--ai)}
+.badge{font-size:9px;padding:0 4px;border-radius:6px;background:var(--ai-soft);color:var(--ai)}
+.pad{display:grid;grid-template-columns:repeat(9,1fr);gap:5px}
+.key{background:var(--cell);border:1px solid var(--line);border-radius:10px;padding:8px 0 4px;color:var(--ai);
+font-size:23px;font-weight:400;display:flex;flex-direction:column;align-items:center;gap:1px;font-family:"Hiragino Mincho ProN",Georgia,serif}
+.key small{font-size:9px;color:var(--muted);font-family:inherit}
+.key:disabled{opacity:.3}
+.key:active,.tool:active,.icobtn:active{transform:scale(.95)}
+button{font:inherit;cursor:pointer;transition:transform .08s ease}
+.sheet{position:fixed;inset:0;background:rgba(20,22,26,.4);display:none;align-items:flex-end;z-index:9}
+.sheet.open{display:flex}
+.card{background:var(--panel);width:100%;max-width:460px;margin:0 auto;border-radius:18px 18px 0 0;
+padding:18px 18px calc(env(safe-area-inset-bottom) + 18px);animation:up .22s ease-out}
+@keyframes up{from{transform:translateY(18px)}}
+.card h2{margin:0 0 14px;font-size:15px;font-weight:600;letter-spacing:.04em}
+.opt{display:flex;justify-content:space-between;align-items:center;width:100%;background:var(--cell);
+border:1px solid var(--line);border-radius:11px;padding:13px 14px;margin-bottom:8px;color:var(--sumi);font-size:15px}
+.opt small{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+.opt.sel{border-color:var(--ai);color:var(--ai)}
+.solid{background:var(--ai);color:var(--paper);border:0;border-radius:11px;padding:14px;width:100%;font-size:15px;font-weight:600;margin-top:4px}
+.plain{background:none;border:0;color:var(--muted);font-size:13px;width:100%;padding:12px 0 0}
+.done{text-align:center;padding:8px 0 4px}
+.done .big{font-size:34px;font-variant-numeric:tabular-nums;font-family:"Hiragino Mincho ProN",Georgia,serif;margin:6px 0}
+.done p{color:var(--muted);font-size:13px;margin:2px 0}
+.sw{width:44px;height:26px;border-radius:13px;background:var(--line);position:relative;transition:background .15s}
+.sw i{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--cell);transition:left .15s}
+.sw.on{background:var(--koke)}
+.sw.on i{left:21px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="top">
+    <button class="lvl" id="lvlBtn"><b id="lvlName">ふつう</b><span id="lvlSub">問題をえらぶ</span></button>
+    <div class="stats">
+      <span class="m" id="missOut"></span>
+      <span class="t" id="timeOut">0:00</span>
+      <button class="icobtn" id="pauseBtn" aria-label="一時停止"><svg viewBox="0 0 24 24"><rect x="8" y="6" width="3" height="12"/><rect x="14" y="6" width="3" height="12"/></svg></button>
+      <button class="icobtn" id="menuBtn" aria-label="メニュー"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+
+  <div class="board" id="board"></div>
+
+  <div class="bottom">
+  <div class="tools">
+    <button class="tool" id="undoBtn"><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg>もどす</button>
+    <button class="tool" id="eraseBtn"><svg viewBox="0 0 24 24"><path d="M4 16 14 6a2 2 0 0 1 3 0l4 4a2 2 0 0 1 0 3l-7 7H8z"/><path d="M6 20h14"/></svg>けす</button>
+    <button class="tool" id="memoBtn"><svg viewBox="0 0 24 24"><path d="M4 20h4l10-10a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13 6l5 5"/></svg>メモ<span class="badge" id="memoState">OFF</span></button>
+    <button class="tool" id="hintBtn"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5.9 1.2 1 2h5c.1-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg>ヒント</button>
+  </div>
+
+  <div class="pad" id="pad"></div>
+  </div>
+</div>
+
+<div class="sheet" id="sheet"><div class="card" id="sheetCard"></div></div>
+
+<script>
+(function(){
+"use strict";
+var LV=[{k:"easy",n:"やさしい",c:46},{k:"normal",n:"ふつう",c:36},{k:"hard",n:"むずかしい",c:30},{k:"pro",n:"達人",c:25}];
+var SAVE="np.save.v1", BEST="np.best.v1", CFG="np.cfg.v1";
+var sol=[],given=[],val=[],notes=[],lvl=1,sel=-1,memo=false,miss=0,hints=0,sec=0,tid=null,paused=false,done=false,undo=[];
+var cfg=load(CFG)||{warn:true};
+var best=load(BEST)||{};
+var board=document.getElementById("board"),pad=document.getElementById("pad"),cells=[],keys=[];
+
+function load(k){try{return JSON.parse(localStorage.getItem(k));}catch(e){return null;}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+function fmt(s){return Math.floor(s/60)+":"+("0"+(s%60)).slice(-2);}
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function pc(m){var n=0;while(m){m&=m-1;n++;}return n;}
+
+function walk(b,limit,rnd){
+  var R=new Int32Array(9),C=new Int32Array(9),B=new Int32Array(9),i,r,c,x,v,found=0;
+  for(i=0;i<81;i++){v=b[i];if(v){r=i/9|0;c=i%9;x=(r/3|0)*3+(c/3|0);var m=1<<v;R[r]|=m;C[c]|=m;B[x]|=m;}}
+  function rec(){
+    if(found>=limit)return;
+    var pick=-1,mask=0,least=10,k,rr,cc,bb,cand,n;
+    for(k=0;k<81;k++){
+      if(b[k])continue;
+      rr=k/9|0;cc=k%9;bb=(rr/3|0)*3+(cc/3|0);
+      cand=(~(R[rr]|C[cc]|B[bb]))&1022;
+      n=pc(cand);
+      if(n===0)return;
+      if(n<least){least=n;pick=k;mask=cand;if(n===1)break;}
+    }
+    if(pick<0){found++;return;}
+    rr=pick/9|0;cc=pick%9;bb=(rr/3|0)*3+(cc/3|0);
+    var order=[1,2,3,4,5,6,7,8,9];
+    if(rnd)shuffle(order);
+    for(var q=0;q<9;q++){
+      var d=order[q],mm=1<<d;
+      if(!(mask&mm))continue;
+      b[pick]=d;R[rr]|=mm;C[cc]|=mm;B[bb]|=mm;
+      rec();
+      if(found>=limit&&rnd)return;
+      b[pick]=0;R[rr]&=~mm;C[cc]&=~mm;B[bb]&=~mm;
+      if(found>=limit)return;
+    }
+  }
+  rec();
+  return found;
+}
+function fullGrid(){
+  var b=new Array(81).fill(0),R=new Int32Array(9),C=new Int32Array(9),B=new Int32Array(9);
+  (function rec(i){
+    if(i===81)return true;
+    var r=i/9|0,c=i%9,x=(r/3|0)*3+(c/3|0),o=shuffle([1,2,3,4,5,6,7,8,9]);
+    for(var q=0;q<9;q++){var d=o[q],m=1<<d;
+      if((R[r]|C[c]|B[x])&m)continue;
+      b[i]=d;R[r]|=m;C[c]|=m;B[x]|=m;
+      if(rec(i+1))return true;
+      b[i]=0;R[r]&=~m;C[c]&=~m;B[x]&=~m;
+    }
+    return false;
+  })(0);
+  return b;
+}
+function makePuzzle(clues){
+  var full=fullGrid(),p=full.slice(),order=shuffle(Array.from({length:81},function(_,i){return i;})),left=81;
+  for(var k=0;k<81&&left>clues;k++){
+    var i=order[k],v=p[i];
+    p[i]=0;
+    if(walk(p,2,false)!==1)p[i]=v; else left--;
+  }
+  return {sol:full,puz:p};
+}
+
+for(var i=0;i<81;i++){
+  var d=document.createElement("div"),r=i/9|0,c=i%9;
+  d.className="c"+((c===2||c===5)?" br":"")+((r===2||r===5)?" bb":"");
+  d.dataset.i=i;board.appendChild(d);cells.push(d);
+}
+for(var n=1;n<=9;n++){
+  var b=document.createElement("button");
+  b.className="key";b.dataset.n=n;
+  b.innerHTML=n+'<small></small>';
+  pad.appendChild(b);keys.push(b);
+}
+
+function render(anim){
+  var sv=sel>=0?val[sel]:0,sr=sel>=0?(sel/9|0):-1,sc=sel>=0?sel%9:-1;
+  for(var i=0;i<81;i++){
+    var el=cells[i],r=i/9|0,c=i%9,v=val[i],cls="c";
+    if(c===2||c===5)cls+=" br";
+    if(r===2||r===5)cls+=" bb";
+    if(sel>=0){
+      if(i===sel)cls+=" sel";
+      else if(r===sr||c===sc||((r/3|0)===(sr/3|0)&&(c/3|0)===(sc/3|0)))cls+=" peer";
+      else if(sv&&v===sv)cls+=" same";
+    }
+    if(v){
+      cls+=given[i]?" given":" mine";
+      if(!given[i]&&cfg.warn&&v!==sol[i])cls+=" wrong";
+      if(anim===i)cls+=" hit";
+      el.textContent=v;
+    }else{
+      var nt=notes[i];
+      if(nt&&nt.length){
+        var h="";
+        for(var k=1;k<=9;k++)h+="<i>"+(nt.indexOf(k)<0?"":k)+"</i>";
+        el.innerHTML='<div class="memo">'+h+'</div>';
+      }else el.textContent="";
+    }
+    el.className=cls;
+  }
+  var cnt={};
+  for(i=0;i<81;i++)if(val[i])cnt[val[i]]=(cnt[val[i]]||0)+1;
+  for(var q=0;q<9;q++){
+    var rest=9-(cnt[q+1]||0);
+    keys[q].querySelector("small").textContent=rest>0?rest:"";
+    keys[q].disabled=rest<=0&&!memo;
+  }
+  document.getElementById("missOut").textContent=miss?"ミス "+miss:"";
+  document.getElementById("lvlName").textContent=LV[lvl].n;
+  document.getElementById("timeOut").textContent=fmt(sec);
+  document.getElementById("memoState").textContent=memo?"ON":"OFF";
+  document.getElementById("memoBtn").className="tool"+(memo?" on":"");
+}
+
+function tick(){if(!paused&&!done){sec++;document.getElementById("timeOut").textContent=fmt(sec);if(sec%10===0)store();}}
+function store(){
+  if(done){localStorage.removeItem(SAVE);return;}
+  save(SAVE,{lvl:lvl,sol:sol,given:given,val:val,notes:notes,sec:sec,miss:miss,hints:hints});
+}
+function clearNotes(i,n){
+  var r=i/9|0,c=i%9,br=(r/3|0)*3,bc=(c/3|0)*3,k,y,x;
+  function rm(j){var p=notes[j].indexOf(n);if(p>=0)notes[j].splice(p,1);}
+  for(k=0;k<9;k++){rm(r*9+k);rm(k*9+c);}
+  for(y=0;y<3;y++)for(x=0;x<3;x++)rm((br+y)*9+bc+x);
+}
+function snap(i){undo.push({i:i,v:val[i],n:notes[i].slice()});if(undo.length>80)undo.shift();}
+
+function put(n){
+  if(done||paused||sel<0||given[sel])return;
+  snap(sel);
+  if(memo){
+    if(val[sel]){val[sel]=0;}
+    var p=notes[sel].indexOf(n);
+    if(p<0)notes[sel].push(n);else notes[sel].splice(p,1);
+    render();store();return;
+  }
+  if(val[sel]===n){val[sel]=0;render();store();return;}
+  val[sel]=n;notes[sel]=[];
+  if(n===sol[sel])clearNotes(sel,n); else miss++;
+  render(sel);store();check();
+}
+function check(){
+  for(var i=0;i<81;i++)if(val[i]!==sol[i])return;
+  done=true;sel=-1;render();
+  localStorage.removeItem(SAVE);
+  var key=LV[lvl].k,rec=best[key],isNew=false;
+  if(hints===0&&(!rec||sec<rec)){best[key]=sec;save(BEST,best);isNew=true;}
+  finish(isNew);
+}
+
+board.addEventListener("click",function(e){
+  var t=e.target.closest(".c");
+  if(!t||done||paused)return;
+  sel=+t.dataset.i;render();
+});
+pad.addEventListener("click",function(e){
+  var b=e.target.closest(".key");
+  if(b&&!b.disabled)put(+b.dataset.n);
+});
+document.getElementById("eraseBtn").onclick=function(){
+  if(done||paused||sel<0||given[sel])return;
+  snap(sel);val[sel]=0;notes[sel]=[];render();store();
+};
+document.getElementById("memoBtn").onclick=function(){memo=!memo;render();};
+document.getElementById("undoBtn").onclick=function(){
+  if(done||paused||!undo.length)return;
+  var u=undo.pop();val[u.i]=u.v;notes[u.i]=u.n;sel=u.i;render();store();
+};
+document.getElementById("hintBtn").onclick=function(){
+  if(done||paused)return;
+  var i=sel;
+  if(i<0||given[i]||val[i]===sol[i]){
+    i=-1;
+    for(var k=0;k<81;k++)if(val[k]!==sol[k]){i=k;break;}
+  }
+  if(i<0)return;
+  snap(i);sel=i;val[i]=sol[i];notes[i]=[];hints++;clearNotes(i,sol[i]);
+  render(i);store();check();
+};
+document.getElementById("pauseBtn").onclick=function(){setPause(!paused);};
+document.getElementById("lvlBtn").onclick=openMenu;
+document.getElementById("menuBtn").onclick=openMenu;
+document.addEventListener("keydown",function(e){
+  if(e.key>="1"&&e.key<="9")put(+e.key);
+  else if(e.key==="Backspace"||e.key==="Delete")document.getElementById("eraseBtn").onclick();
+});
+document.addEventListener("visibilitychange",function(){
+  if(document.hidden){store();if(!done)setPause(true);}
+});
+
+function setPause(p){
+  if(done)return;
+  paused=p;
+  var old=board.querySelector(".paused");
+  if(old)old.remove();
+  if(p){
+    var d=document.createElement("div");
+    d.className="paused";
+    d.innerHTML='<svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="8,5 19,12 8,19"/></svg><div>タップで再開</div>';
+    d.onclick=function(){setPause(false);};
+    board.appendChild(d);
+  }
+}
+
+var sheet=document.getElementById("sheet"),card=document.getElementById("sheetCard");
+sheet.onclick=function(e){if(e.target===sheet)sheet.classList.remove("open");};
+function openMenu(){
+  if(!done&&!paused)setPause(true);
+  var h='<h2>問題をえらぶ</h2>';
+  LV.forEach(function(L,i){
+    var b=best[L.k];
+    h+='<button class="opt'+(i===lvl?" sel":"")+'" data-lv="'+i+'">'+L.n+'<small>'+(b?"最短 "+fmt(b):"—")+'</small></button>';
+  });
+  h+='<button class="opt" id="toggleWarn">まちがいをすぐ知らせる<span class="sw'+(cfg.warn?" on":"")+'"><i></i></span></button>';
+  h+='<button class="plain" id="closeSheet">とじる</button>';
+  card.innerHTML=h;
+  card.querySelectorAll("[data-lv]").forEach(function(b){
+    b.onclick=function(){var i=+b.dataset.lv;sheet.classList.remove("open");newGame(i);};
+  });
+  card.querySelector("#toggleWarn").onclick=function(){
+    cfg.warn=!cfg.warn;save(CFG,cfg);
+    this.querySelector(".sw").className="sw"+(cfg.warn?" on":"");
+    render();
+  };
+  card.querySelector("#closeSheet").onclick=function(){sheet.classList.remove("open");setPause(false);};
+  sheet.classList.add("open");
+}
+function finish(isNew){
+  var b=best[LV[lvl].k];
+  card.innerHTML='<div class="done"><p>'+LV[lvl].n+' クリア</p><div class="big">'+fmt(sec)+'</div>'+
+    '<p>'+(isNew?"自己ベスト更新":(b?"自己ベスト "+fmt(b):"ヒントを使ったので記録は残りません"))+'</p>'+
+    '<p>ミス '+miss+' ／ ヒント '+hints+'</p></div>'+
+    '<button class="solid" id="again">もう一問</button>'+
+    '<button class="plain" id="pick">難易度をえらぶ</button>';
+  card.querySelector("#again").onclick=function(){sheet.classList.remove("open");newGame(lvl);};
+  card.querySelector("#pick").onclick=function(){openMenu();};
+  sheet.classList.add("open");
+}
+function busy(on){
+  if(on){
+    var d=document.createElement("div");
+    d.className="paused";d.id="busy";d.textContent="問題をつくっています…";
+    board.appendChild(d);
+  }else{var e=document.getElementById("busy");if(e)e.remove();}
+}
+function newGame(i){
+  lvl=i;busy(true);
+  setTimeout(function(){
+    var p=makePuzzle(LV[lvl].c);
+    sol=p.sol;val=p.puz.slice();
+    given=p.puz.map(function(v){return v>0;});
+    notes=[];for(var k=0;k<81;k++)notes.push([]);
+    sel=-1;memo=false;miss=0;hints=0;sec=0;done=false;paused=false;undo=[];
+    busy(false);render();store();
+    clearInterval(tid);tid=setInterval(tick,1000);
+  },30);
+}
+function boot(){
+  var s=load(SAVE);
+  if(s&&s.sol&&s.sol.length===81){
+    lvl=s.lvl;sol=s.sol;given=s.given;val=s.val;notes=s.notes;sec=s.sec;miss=s.miss;hints=s.hints||0;
+    done=false;render();
+    clearInterval(tid);tid=setInterval(tick,1000);
+    setPause(true);
+  }else newGame(1);
+}
+boot();
+})();
+</script>
+</body>
+</html>
